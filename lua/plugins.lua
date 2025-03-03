@@ -24,6 +24,7 @@ require('lazy').setup({
     require 'plugins/treesitter',
     require 'plugins/neo-tree',
     require 'plugins/autopairs',
+    require 'plugins/alpha',
 
     -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
     -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
