@@ -1,0 +1,27 @@
+-- local group = vim.api.nvim_create_augroup('ThemeReload', { clear = true })
+--
+-- vim.api.nvim_create_autocmd('BufWritePost', {
+--   group = group,
+--   pattern = '*.lua',
+--   callback = function()
+--     -- 1. clear lua module cache (IMPORTANT)
+--     package.loaded["mono"] = nil
+--
+--     -- if your theme has submodules, clear them too:
+--     for name, _ in pairs(package.loaded) do
+--       if name:match("^mono") then
+--         package.loaded[name] = nil
+--       end
+--     end
+--
+--     -- 2. clear highlights
+--     vim.cmd('hi clear')
+--     vim.cmd('syntax reset')
+--
+--     -- 3. reload colorscheme
+--     vim.cmd('colorscheme mono')
+--
+--     -- 4. redraw
+--     vim.cmd('redraw')
+--   end,
+-- })
