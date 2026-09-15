@@ -753,69 +753,77 @@ require('lazy').setup({
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    -- config = function() vim.cmd 'colorscheme rose-pine' end,
-  },
-
-  {
-    'wnkz/monoglow.nvim',
-    lazy = false,
-    priority = 1000,
     config = function()
-      require('monoglow').setup {
-        on_colors = function(colors)
-          colors.glow = '#d65a5a'
-          colors.lack = '#7a6c6c'
-          colors.luster = '#f0e6e3'
-          colors.blue1 = '#d8b2b2'
-          colors.blue2 = '#b26a6a'
-        end,
+      require('rose-pine').setup {
+        styles = {
+          transparency = true,
+        },
       }
-      vim.cmd.colorscheme 'monoglow'
 
-      local transparent = function()
-        local groups = {
-          'Normal',
-          'NormalNC',
-          'NormalFloat',
-          'SignColumn',
-          'EndOfBuffer',
-          'FloatBorder',
-          'StatusLine',
-          'StatusLineNC',
-        }
-
-        for _, group in ipairs(groups) do
-          vim.api.nvim_set_hl(0, group, { bg = 'NONE', ctermbg = 'NONE' })
-        end
-      end
-
-      transparent()
-
-      vim.api.nvim_create_autocmd('ColorScheme', {
-        pattern = '*',
-        callback = transparent,
-      })
+      vim.cmd.colorscheme 'rose-pine'
     end,
   },
 
-  {
-    'kdheepak/monochrome.nvim',
-    lazy = false,
-    priority = 1000,
-    -- config = function()
-    --   vim.cmd.colorscheme 'monochrome'
-    -- end,
-  },
-
-  {
-    'rebelot/kanagawa.nvim',
-    lazy = false,
-    priority = 1000,
-    -- init = function() vim.cmd.colorscheme 'kanagawa' end,
-    opts = {
-      transparent = true,
-    },
-  },
+  -- {
+  --   'wnkz/monoglow.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('monoglow').setup {
+  --       on_colors = function(colors)
+  --         colors.glow = '#d65a5a'
+  --         colors.lack = '#7a6c6c'
+  --         colors.luster = '#f0e6e3'
+  --         colors.blue1 = '#d8b2b2'
+  --         colors.blue2 = '#b26a6a'
+  --       end,
+  --     }
+  --     vim.cmd.colorscheme 'monoglow'
+  --
+  --     local transparent = function()
+  --       local groups = {
+  --         'Normal',
+  --         'NormalNC',
+  --         'NormalFloat',
+  --         'SignColumn',
+  --         'EndOfBuffer',
+  --         'FloatBorder',
+  --         'StatusLine',
+  --         'StatusLineNC',
+  --       }
+  --
+  --       for _, group in ipairs(groups) do
+  --         vim.api.nvim_set_hl(0, group, { bg = 'NONE', ctermbg = 'NONE' })
+  --       end
+  --     end
+  --
+  --     transparent()
+  --
+  --     vim.api.nvim_create_autocmd('ColorScheme', {
+  --       pattern = '*',
+  --       callback = transparent,
+  --     })
+  --   end,
+  -- },
+  --
+  -- {
+  --   'kdheepak/monochrome.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   -- config = function()
+  --   --   vim.cmd.colorscheme 'monochrome'
+  --   -- end,
+  -- },
+  --
+  -- {
+  --   'rebelot/kanagawa.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   -- init = function() vim.cmd.colorscheme 'kanagawa' end,
+  --   opts = {
+  --     transparent = true,
+  --   },
+  -- },
 
   -- Highlight todo, notes, etc in comments
   {
